@@ -1,0 +1,24 @@
+*Electric Guitar Pickup with 250kOhm Volume and Tone Controls SPICE Subcircuit
+*
+*VG1=Sine Wave Generator (100mV P-P 440 Hz)
+*R3-R2=250kOhms Tone Control (Voltage Divider set to 99 Percent Maximum)
+*R5-R4=250kOhms Volume Control (Voltage Divider set to 99 Percent Maximum)
+*C1=Pickup Capacitance (120pF)
+*C2=Tone Capacitor (.022uF)
+*R1=Pickup Resistance (10kOhms)
+*L1=Pickup Inductance (2.5H)
+*
+*Connections:***OUT
+************* | GND
+************* | |
+.SUBCKT EGUITAR 1 2
+VG1 6 3 AC 1 0
+R5 2 3 247.5K
+R4 4 2 2.5K
+R2 5 1 2.5K
+R3 4 5 247.5K
+C2 5 3 22N
+C1 4 3 120P
+R1 7 6 10K
+L1 4 7 2.5H
+.ENDS 

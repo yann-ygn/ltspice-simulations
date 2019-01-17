@@ -1,0 +1,13 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -96 -65 33 26
+WINDOW 3 -31 23 Top 2
+SYMATTR Value EGUITAR
+SYMATTR Prefix X
+SYMATTR ModelFile eguitar.lib
+PIN 32 -16 RIGHT 8
+PINATTR PinName OUT
+PINATTR SpiceOrder 1
+PIN -96 -16 LEFT 8
+PINATTR PinName GND
+PINATTR SpiceOrder 2
