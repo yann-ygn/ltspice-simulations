@@ -1,0 +1,33 @@
+* Z:\Dev\04 - LTspice\Simulations\Booster\Booster.asc
+C1 N010 N009 100n
+R1 Vb N010 3.9Meg
+R2 N011 N010 10k
+R3 Vr N001 47R
+C2 Vr 0 100n
+C3 Vr 0 100µ
+R4 Vb Vr 10k
+R5 0 Vb 10k
+C4 Vb 0 47µ
+XU2 N006 N003 N004 pot_lin Rtot=100K wiper={tone}
+C5 N006 N007 10n
+XU3 N009 0 EGUITAR
+R6 N005 N007 22k
+R7 N003 N005 22k
+C6 0 N005 10n
+C7 N008 N007 4.7µ
+XU4 N008 0 N012 pot_lin Rtot=100K wiper={volume}
+XU1 N011 N004 Vr 0 N007 TL081 TL081
+R8 N002 N004 5k
+C8 0 N002 4.7µ
+V1 N001 0 9V
+* .ac oct 40 20 20K
+.tran 0 25ms 20ms
+.param tone 0.5
+.step param volume 0.1 1 0.1
+.include eguitar.lib
+.include potentiometer_standard.lib
+.include tl081.lib
+.lib eguitar.lib
+.lib TL081.lib
+.backanno
+.end
